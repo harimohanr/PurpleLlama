@@ -8,6 +8,7 @@
 import json
 import logging
 import re
+import requests
 from pathlib import Path
 from typing import cast, Dict, Optional, Union
 
@@ -208,10 +209,18 @@ class InterpreterBenchmark(Benchmark):
         Args:
             prompt_path (Path): The path to the file containing the prompts.
         """
+
+
+        
+        
         if (judge_path := self.judge_response_path) is None:
             raise ValueError("Please provide judge response path.")
         else:
             judge_response_result = json.loads(judge_path.read_text())
+
+        print(f"Judge path is {judge_path}")
+        print(f"Judge response result is {judge_response_result}")
+
 
         model_to_category_to_stat: Dict[
             str, Dict[str, Dict[str, Union[int, float]]]
