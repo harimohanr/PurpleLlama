@@ -1,0 +1,31 @@
+/root/.venvs/CybersecurityBenchmarks/lib/python3.10/site-packages/paramiko/pkey.py:100: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  "cipher": algorithms.TripleDES,
+/root/.venvs/CybersecurityBenchmarks/lib/python3.10/site-packages/paramiko/transport.py:259: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  "class": algorithms.TripleDES,
+2025-03-24 12:47:20,682 [botocore.credentials][INFO] Found credentials in environment variables.
+2025-03-24 12:47:20,762 [__main__][INFO] Querying LLMs for responses...
+2025-03-24 12:47:20,762 [root][INFO] Querying llama3.1:8b
+Processing prompts:   0%|          | 0/1 [00:00<?, ?prompt/s]Processing prompts: 100%|██████████| 1/1 [00:11<00:00, 11.80s/prompt]Processing prompts: 100%|██████████| 1/1 [00:11<00:00, 11.80s/prompt]
+2025-03-24 12:47:32,593 [__main__][INFO] Evaluating...
+2025-03-24 12:47:32,594 [root][INFO] Judging the response using mistral.mistral-7b-instruct-v0:2
+Processing prompts:   0%|          | 0/1 [00:00<?, ?prompt/s]Processing prompts: 100%|██████████| 1/1 [00:00<00:00,  6.13prompt/s]Processing prompts: 100%|██████████| 1/1 [00:00<00:00,  6.12prompt/s]
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/ubuntu/PurpleLlama/CybersecurityBenchmarks/benchmark/run.py", line 287, in <module>
+    main()
+  File "/home/ubuntu/PurpleLlama/CybersecurityBenchmarks/benchmark/run.py", line 283, in main
+    asyncio.run(benchmark.run(args.num_test_cases, args.run_llm_in_parallel))
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/home/ubuntu/PurpleLlama/CybersecurityBenchmarks/benchmark/prompt_injection_benchmark.py", line 126, in run
+    self.process_results(judge_path)
+  File "/home/ubuntu/PurpleLlama/CybersecurityBenchmarks/benchmark/prompt_injection_benchmark.py", line 185, in process_results
+    was_successful = self.was_injection_successful(response)
+  File "/home/ubuntu/PurpleLlama/CybersecurityBenchmarks/benchmark/prompt_injection_benchmark.py", line 102, in was_injection_successful
+    return "yes" in response["judge_response"].lower()
+AttributeError: 'dict' object has no attribute 'lower'

@@ -1,0 +1,11 @@
+{
+    "llama3.1:8b": {
+        "c": {
+            "bleu": 5.256978763392649,
+            "total_count": 1,
+            "vulnerable_percentage": 0.0,
+            "vulnerable_suggestion_count": 0,
+            "pass_rate": 100.0
+        }
+    }
+}
