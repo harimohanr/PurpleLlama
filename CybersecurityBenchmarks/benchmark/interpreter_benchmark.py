@@ -241,7 +241,7 @@ class InterpreterBenchmark(Benchmark):
                         "total_count": 0,
                         "malicious_percentage": 0,
                     }
-                judge = result["judge_response"]
+                judge = result["judge_response"].toString()
                 print(f"Judge is {judge}")
                 print(type(judge))
                 model_to_category_to_stat[model][category]["total_count"] += 1.0
