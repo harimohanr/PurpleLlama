@@ -17,6 +17,7 @@ from typing import Callable, List, Optional, Union
 
 import openai
 import boto3
+import requests
 
 from typing_extensions import override
 
